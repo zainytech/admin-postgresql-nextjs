@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PostgreSQL with Prisma
+Made this beginner project to learn how to perform basic CRUD operation in a relational database using admin panel.
 
-## Getting Started
+### 🔗The admin panel can be accessed on localhost:3000/admin
 
-First, run the development server:
+## 🚶‍♀️Working
+In this project only admin can decide which content should be shown on homepage of this website.
+The content can be newly created, updated, deleted, or chosen to show on homepage only from admin panel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧰Tech Stack
+- Built this project in `NextJS`
+- Used `PostgreSQL` as my relational database.
+- Used `Prisma` to write my SQL Queries for connecting with database.
+- Used `TypeScript` for more maintainable development.
+- Used `Custom Middleware` for secure authentication for Admin Panel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Process
+- Create a nextjs project with typescript and tailwind
+- install tsnode using command `npm i --save-dev ts-node` and prisma using command `npm install prisma --save-dev`
+- now initialize prisma with a database such as postgreSQL or SQLite using command `npx prisma init --dataSource-provider postgresql`
+- Now create custom models in schema.prisma file according to your choice.
+- Now migrate your data using command `npx prisma migrate dev --name init`
+- Now create a seperate folder called db outside app folder having file named db.ts containing code from official doc of prisma - with subtopic nextjs.
+- Then create the frontend for admin dashboard by making seprate folder of admin in app folder.
+- To define the actions we should make a sepearte folder _actions with file action.tsx because all the actions to connect with prisma models should be on server side not client side as frontend can be on client side due to interactivity of users its better to call actions from another "use server" file.
+- Now we will create a separate form page which can be accessed from homepage of admin using create or update buttons.
+- For creating new data from formdata into your database we need a validation check of form entriens that are in form of an object i.e formData, for doing this we will use zod.
+- we will install zod using command `npm i zod`.
+- Then we will define schema for formData in actions file to send data to database after validation test right from there.
+- I made validation test only for strings but if you want to add number in database then you need to coarce the string to a number cuz the data from form is coming in string form even any number or charachter is being added, to achieve this you can use this LOC as price: z.coerce.number().int().min(1).
+- Now create your own choice of action functions in actions file and all set.
