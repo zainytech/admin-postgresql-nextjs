@@ -1,4 +1,4 @@
-# PostgreSQL with Prisma
+# NextJS admin Panel using PostgreSQL(db) and Prisma
 Made this beginner project to learn how to perform basic CRUD operation in a relational database using admin panel.
 
 ### 🔗The admin panel can be accessed on localhost:3000/admin
