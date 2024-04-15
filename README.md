@@ -31,7 +31,7 @@ The content can be newly created, updated, deleted, or chosen to show on homepag
 - Now create your own choice of action functions in actions file and all set.
 
 - **How to show videos and gif in nextjs**
-- Install package next-videos using command `npm i next-videos` the offical link for this package is (here)[https://www.npmjs.com/package/next-videos]
+- Install package next-videos using command `npm i next-videos` the offical link for this package is [here](https://www.npmjs.com/package/next-videos)
 - Then make changes to your next-config.mjs file by adding code as shown in this projects next-config not from official package site cuz its showing for next-config.js file.
 - Then add videos as you like by using "use client" and not "require" in video tag(as shown on official package site) only use src tag.
 - Meanwhile gif are same as of Image in nextjs.
