@@ -64,7 +64,7 @@ export async function updateData(id:string , formData: FormData){
     // console.log(formData)
 }
 
-export async function deleteData(id) {
-    await prisma.content.delete({where: id});
+export async function deleteData(id:string) {
+    await prisma.content.delete({where: {id}})
     redirect('/admin')
 }

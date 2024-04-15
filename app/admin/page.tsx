@@ -42,6 +42,8 @@ const allContent = await fetchData();
       <button className='bg-green-700 px-2 text-white'>Add</button>
       <Link href={`/admin/update/${content.id}`}><button className='bg-blue-700 px-2 text-white'>Update</button></Link>
       <DeleteButton id={content.id}/>
+      
+      
       </div>
     </div>
 ))}
