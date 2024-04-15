@@ -35,10 +35,10 @@ const EmblaCarousel = (props) => {
         <div className="embla__container h-[90%]">
          
             <div className="embla__slide">
-              <Image src={drawing} layout="fill" objectFit="cover"/>
+              <Image src='/gif.gif' layout="fill" />
             </div>
             <div className="embla__slide">
-              <Image src={drawing} style={{ width: '100%', height: '100%', objectFit:'cover'}} />
+              <video src={'/unial-task.mp4'} autoPlay loop controls/>
             </div>
             <div className="embla__slide">
               <Image src={drawing} style={{ width: '100%', height: '100%', objectFit:'cover'}}/>
