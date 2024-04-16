@@ -29,3 +29,9 @@ The content can be newly created, updated, deleted, or chosen to show on homepag
 - Then we will define schema for formData in actions file to send data to database after validation test right from there.
 - I made validation test only for strings but if you want to add number in database then you need to coarce the string to a number cuz the data from form is coming in string form even any number or charachter is being added, to achieve this you can use this LOC as price: z.coerce.number().int().min(1).
 - Now create your own choice of action functions in actions file and all set.
+
+- **How to show videos and gif in nextjs**
+- Install package next-videos using command `npm i next-videos` the offical link for this package is [here](https://www.npmjs.com/package/next-videos)
+- Then make changes to your next-config.mjs file by adding code as shown in this projects next-config not from official package site cuz its showing for next-config.js file.
+- Then add videos as you like by using "use client" and not "require" in video tag(as shown on official package site) only use src tag.
+- Meanwhile gif are same as of Image in nextjs.
