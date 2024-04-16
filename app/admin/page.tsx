@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { fetchData } from "./_actions/actions";
 import DeleteButton from "./_components/DeleteButton";
+import Image from "next/image";
 
 const Admin = async() => {
 
@@ -38,6 +39,16 @@ const allContent = await fetchData();
 
       <div className='flex gap-2'><label>Sub Para 3:</label>
       <p>{content.subPara3}</p></div>
+
+      <div className='flex gap-2'><label>Video:</label>
+      <p>{content.videoPath}</p></div>
+
+      <div className='flex gap-2'><label>Image:</label>
+      <Image src={content.imagePath} width={100} height={100} alt="carousel-image"/></div>
+
+      <div className='flex gap-2'><label>Gif:</label>
+      <Image src={content.gifPath} width={100} height={100} alt="carousel-image"/></div>
+
       <div className='flex gap-5 m-5'>
       <button className='bg-green-700 px-2 text-white'>Add</button>
       <Link href={`/admin/update/${content.id}`}><button className='bg-blue-700 px-2 text-white'>Update</button></Link>

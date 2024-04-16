@@ -19,5 +19,7 @@ model Content {
   subPara2 String
   subTitle3 String
   subPara3 String
-
+  videoPath String
+  imagePath String
+  gifPath String
 }

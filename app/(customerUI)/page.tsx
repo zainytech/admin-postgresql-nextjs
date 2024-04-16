@@ -8,11 +8,6 @@ import next from  '../../public/next.svg'
 const HomePage = async() => {
     const contentFirst = await prisma.content.findFirst({});
 
-    const OPTIONS = {}
-    const SLIDE_COUNT = 3
-    const SLIDES = [drawing,next,drawing]
-    
-
   return (
 
     <>
@@ -45,7 +40,7 @@ const HomePage = async() => {
         </div>
     </section>
     <section className="w-1/2 h-auto">
-    <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+    <EmblaCarousel video={contentFirst?.videoPath} image={contentFirst?.imagePath} gif={contentFirst?.gifPath}/>
 
     </section>
     </section>

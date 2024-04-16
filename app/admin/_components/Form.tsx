@@ -16,7 +16,7 @@ console.log(content,"content")
       updateData(content.id,formData);
     } else createData(formData);
   }catch(err){
-    console.log("we are done here:",err)
+    console.log("Error while sending data:",err)
   }
  
  }
@@ -52,6 +52,15 @@ console.log(content,"content")
 
             <div><input type="text" placeholder="content for sub para3" id="subPara3" name="subPara3" defaultValue={content?.subPara3 || ""}></input>
             {/* {error?.subPara3 && <div className="text-destructive">{error.subPara3}</div>} */}
+            </div>
+
+            <div><label>Choose Video</label><input type="file" accept="video/*" placeholder="select video" id="video" name="video" required defaultValue={content?.videoPath || ""}></input>
+            </div>
+
+            <div><label>Choose Image</label><input type="file" accept="image/*" placeholder="select image" id="image" name="image" required defaultValue={content?.imagePath || ""}></input>
+            </div>
+
+            <div><label>Choose Gif</label><input type="file" accept="image/gif,image/vnd.gif" placeholder="select gif" id="gif" name="gif" required defaultValue={content?.gifPath || ""}></input>
             </div>
 
             <div><button type='submit' className='px-2 bg-green-700'>Add</button></div>

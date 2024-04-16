@@ -11,7 +11,7 @@ async function isAuthenticated(req: NextRequest){
     if(authHeader == null) return false
 
     const [username,password] = Buffer.from(authHeader.split(" ")[1],"base64").toString().split(":")
-    console.log(username,password) 
+    // console.log(username,password) 
 
     return username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD
 }
