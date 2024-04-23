@@ -1,12 +1,14 @@
 "use client"
-import { useFormState } from "react-dom";
+
 import { FormEvent } from "react";
 import { createData } from "../_actions/actions";
 import { Content } from "@prisma/client";
 import { updateData } from "../_actions/actions";
+import Image from "next/image";
 
 const Form = ({content}:{content?:Content | null}) => {
 console.log(content,"content")
+
  const handleSubmit = async(event: FormEvent<HTMLFormElement>) =>{
   event.preventDefault();
   const formData = new FormData(event.target as HTMLFormElement);
@@ -54,15 +56,24 @@ console.log(content,"content")
             {/* {error?.subPara3 && <div className="text-destructive">{error.subPara3}</div>} */}
             </div>
 
-            <div><label>Choose Video</label><input type="file" accept="video/*" placeholder="select video" id="video" name="video" required defaultValue={content?.videoPath || ""}></input>
-            </div>
-
-            <div><label>Choose Image</label><input type="file" accept="image/*" placeholder="select image" id="image" name="image" required defaultValue={content?.imagePath || ""}></input>
-            </div>
-
-            <div><label>Choose Gif</label><input type="file" accept="image/gif,image/vnd.gif" placeholder="select gif" id="gif" name="gif" required defaultValue={content?.gifPath || ""}></input>
-            </div>
-
+            <div><label>Choose Video</label>
+            <input type="file" accept="video/*" placeholder="select video" id="video" name="video" required={content == null} ></input>
+            {content != null && (
+              <div>{content?.videoPath || ""}</div>
+            )}</div>
+<br/>
+            <div><label>Choose Image</label>
+            <input type="file" accept="image/*" placeholder="select image" id="image" name="image" required={content == null} ></input>
+            {content != null && (
+              <Image src={content?.imagePath} width={100} height={100} alt="corousel image"/>
+            )}</div>
+<br/>
+            <div><label>Choose Gif</label>
+            <input type="file" accept="image/gif,image/vnd.gif" placeholder="select gif" id="gif" name="gif" required={content == null} ></input>
+            {content != null && (
+              <Image src={content?.gifPath} width={100} height={100} alt="corousel gif"/>
+            )}</div>
+<br/>
             <div><button type='submit' className='px-2 bg-green-700'>Add</button></div>
     </form>
  
