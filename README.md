@@ -36,5 +36,11 @@ The content can be newly created, updated, deleted, or chosen to show on homepag
 - Then add videos as you like by using "use client" and not "require" in video tag(as shown on official package site) only use src tag.
 - Meanwhile gif are same as of Image in nextjs.
 
+ **How to update and delete visual content like videos images or gifs from your db and system respectively**
+- At first you need to make a separate schema using zod for the files content to be updated optionally.
+- Then you make sure that in update section it gets unlink from your project first and only then its path will get updated in your db.
+- Then make sure that where the inputs are defined in the form how they are going to be designed for frontend part on update page if content is present.
+- Also unlink the files from system in delete action while deleting data from db.
+ 
  **How to select a single content card for the frontend among multiple cards data fetched from db?**
  - 
